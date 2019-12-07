@@ -9,6 +9,9 @@ import javafx.stage.StageStyle;
 
 public class Main extends Application {
 
+    private double xOffset = 0;
+    private double yOffset = 0;
+
     public static void main(String[] args) {
         launch(args);
     }
@@ -18,6 +21,15 @@ public class Main extends Application {
         primaryStage.initStyle(StageStyle.UNDECORATED);
 
         BorderPane root = FXMLLoader.load(getClass().getResource("Pomodoro.fxml"));
+
+        root.setOnMousePressed(event -> {
+            xOffset = event.getSceneX();
+            yOffset = event.getSceneY();
+        });
+        root.setOnMouseDragged(event -> {
+            primaryStage.setX(event.getScreenX() - xOffset);
+            primaryStage.setY(event.getScreenY() - yOffset);
+        });
 
         primaryStage.setTitle("Pomodoro Timer");
         primaryStage.setScene(new Scene(root));

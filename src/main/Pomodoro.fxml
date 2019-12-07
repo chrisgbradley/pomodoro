@@ -5,17 +5,67 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 <BorderPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
             minWidth="-Infinity" prefHeight="450.0" prefWidth="300.0" style="-fx-background-color: #b3e5fc;"
             xmlns="http://javafx.com/javafx/8.0.172-ea" fx:controller="main.PomodoroController">
+    <bottom>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="start" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                        minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="75.0" text="Start">
+                    <font>
+                        <Font name="Verdana Bold" size="18.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="stop" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                        minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="75.0" text="Stop">
+                    <font>
+                        <Font name="Verdana Bold" size="18.0"/>
+                    </font>
+                </Button>
+            </children>
+        </HBox>
+    </bottom>
     <center>
-        <Text fill="#666666" strokeType="OUTSIDE" strokeWidth="0.0" text="Pomodoro" BorderPane.alignment="CENTER">
-            <font>
-                <Font name="Verdana" size="18.0"/>
-            </font>
-        </Text>
+        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0" BorderPane.alignment="CENTER">
+            <children>
+                <Text fill="#666666" strokeType="OUTSIDE" strokeWidth="0.0" text="Pomodoro">
+                    <font>
+                        <Font name="Verdana" size="18.0"/>
+                    </font>
+                </Text>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                    <children>
+                        <Button fx:id="add" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                                minWidth="-Infinity" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0"
+                                text="+">
+                            <font>
+                                <Font size="36.0"/>
+                            </font>
+                            <HBox.margin>
+                                <Insets/>
+                            </HBox.margin>
+                        </Button>
+                        <Text fx:id="timerText" fill="#555555" strokeType="OUTSIDE" strokeWidth="0.0" text="00:00:00">
+                            <font>
+                                <Font size="24.0"/>
+                            </font>
+                        </Text>
+                        <Button fx:id="less" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                                minWidth="-Infinity" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0"
+                                text="-">
+                            <font>
+                                <Font size="36.0"/>
+                            </font>
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
     </center>
     <top>
         <Button fx:id="close" mnemonicParsing="false" style="-fx-background-color: transparent;"
@@ -26,9 +76,6 @@
                     <Image url="@resources/icons8-close-window-50.png"/>
                 </ImageView>
             </graphic>
-            <BorderPane.margin>
-                <Insets/>
-            </BorderPane.margin>
             <padding>
                 <Insets bottom="-2.0" left="-2.0" right="-2.0" top="-2.0"/>
             </padding>
