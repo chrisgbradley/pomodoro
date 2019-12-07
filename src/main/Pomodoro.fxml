@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="450.0" prefWidth="300.0" style="-fx-background-color: #b3e5fc;"
+            xmlns="http://javafx.com/javafx/8.0.172-ea" fx:controller="main.PomodoroController">
+    <center>
+        <Text fill="#666666" strokeType="OUTSIDE" strokeWidth="0.0" text="Pomodoro" BorderPane.alignment="CENTER">
+            <font>
+                <Font name="Verdana" size="18.0"/>
+            </font>
+        </Text>
+    </center>
+    <top>
+        <Button fx:id="close" mnemonicParsing="false" style="-fx-background-color: transparent;"
+                BorderPane.alignment="TOP_RIGHT">
+            <graphic>
+                <ImageView fx:id="closeButtonImageView" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <Image url="@resources/icons8-close-window-50.png"/>
+                </ImageView>
+            </graphic>
+            <BorderPane.margin>
+                <Insets/>
+            </BorderPane.margin>
+            <padding>
+                <Insets bottom="-2.0" left="-2.0" right="-2.0" top="-2.0"/>
+            </padding>
+        </Button>
+    </top>
+</BorderPane>
